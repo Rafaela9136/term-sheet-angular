@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { HomeComponent } from './home/home.component';
+import { DealComponent } from './deal/deal.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { IDeal } from "./interfaces/ideal";
+
 
 @Component({
   selector: 'app-root',
@@ -11,10 +14,45 @@ import { HomeComponent } from './home/home.component';
   imports: [
     CommonModule, 
     RouterOutlet,
-    HomeComponent
+    NavbarComponent,
+    DealComponent
   ],
 })
 
 export class AppComponent {
-  title = 'term-sheet-angular';
+  public newDeal = {
+    value: ''
+  };
+
+  allDeals: IDeal[] = [
+    {
+      name: "Deal 1",
+      type: "Acquisition",
+      purchasePrice: 350,
+      address: "rua",
+      noi: 12122,
+      capRate: 12122
+    },
+    {
+      name: "Deal 1",
+      type: "Acquisition",
+      purchasePrice: 350,
+      address: "rua",
+      noi: 12122,
+      capRate: 12122
+    },
+    {
+      name: "Deal 1",
+      type: "Acquisition",
+      purchasePrice: 350,
+      address: "rua",
+      noi: 12122,
+      capRate: 12122
+    }
+  ];
+
+  get deals() {
+    console.log(this.allDeals)
+    return this.allDeals;
+  }
 }

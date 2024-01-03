@@ -1,6 +1,39 @@
 <main>
+  <section>
+    <app-navbar></app-navbar>
+  </section>
   <section class="content">
-    <app-home></app-home>
+    <!-- <label for="addItemInput">What would you like to do today?</label>
+
+    <input
+      #newItem
+      placeholder="add an item"
+      (keyup.enter)="addDeal(newDeal.value); newDeal.value = ''"
+      class="lg-text-input"
+      id="addItemInput" />
+
+    <button class="btn-primary" (click)="addDeal(newDeal.value)">Add</button> -->
+
+    <p>Deals List</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Price ($)</th>
+          <th>Address</th>
+          <th>NOI ($)</th>
+          <th>Cap Rate (%)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr app-deal 
+            *ngFor="let deal of deals"
+            [deal]="deal"
+        >
+        </tr>
+      </tbody>
+    </table>
   </section>
 </main>
 
