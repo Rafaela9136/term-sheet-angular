@@ -4,6 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { DealComponent } from './deal/deal.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { IDeal } from "./interfaces/ideal";
+import { DealService } from "./services/deal.service";
 
 
 @Component({
@@ -24,35 +25,9 @@ export class AppComponent {
     value: ''
   };
 
-  allDeals: IDeal[] = [
-    {
-      name: "Deal 1",
-      type: "Acquisition",
-      purchasePrice: 350,
-      address: "rua",
-      noi: 12122,
-      capRate: 12122
-    },
-    {
-      name: "Deal 1",
-      type: "Acquisition",
-      purchasePrice: 350,
-      address: "rua",
-      noi: 12122,
-      capRate: 12122
-    },
-    {
-      name: "Deal 1",
-      type: "Acquisition",
-      purchasePrice: 350,
-      address: "rua",
-      noi: 12122,
-      capRate: 12122
-    }
-  ];
+  constructor(private DealService: DealService) {}
 
   get deals() {
-    console.log(this.allDeals)
-    return this.allDeals;
+    return this.DealService.getDeals();;
   }
 }
