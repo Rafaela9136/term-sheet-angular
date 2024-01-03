@@ -1,0 +1,40 @@
+.menubar {
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1em;
+  position: absolute;
+  background-color: #271b90;
+
+  .home {
+    color: white;
+    display: inline;
+    font-weight: bold;
+
+    .logo {
+      width: 25px;
+      height: 25px;
+      display: inline-block;
+      background-image: url("/assets/images/home.svg");
+      background-repeat: no-repeat;
+      -webkit-filter: invert(100%);
+      background-size: 100%;
+      filter: invert(100%);
+    }
+
+    p {
+      padding-left: 10px;
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+
+  .add-deal {
+    float: right;
+    height: 30px;
+    border: none;
+    display: inline;
+    border-radius: 2px;
+    background-color: white;
+  }
+}
