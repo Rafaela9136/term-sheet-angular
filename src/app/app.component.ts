@@ -1,10 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { DealComponent } from './deal/deal.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { IDeal } from "./interfaces/ideal";
-import { DealService } from "./services/deal.service";
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 
 @Component({
@@ -16,18 +13,9 @@ import { DealService } from "./services/deal.service";
     CommonModule, 
     RouterOutlet,
     NavbarComponent,
-    DealComponent
   ],
 })
 
 export class AppComponent {
-  public newDeal = {
-    value: ''
-  };
 
-  constructor(private DealService: DealService) {}
-
-  get deals() {
-    return this.DealService.getDeals();;
-  }
 }

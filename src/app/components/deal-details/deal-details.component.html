@@ -1,0 +1,10 @@
+<div *ngIf="deal">
+  <h2>{{ deal.name }} Details</h2>
+  <p>Type: {{ deal.type }}</p>
+  <p>Purchase Price: ${{ deal.purchasePrice }}</p>
+  <p>Address: ${{ deal.address }}</p>
+  <p>NOI: ${{ deal.noi }}</p>
+  <p>capRate: {{ deal.capRate }}%</p>
+
+  <button (click)="goBack()">Go Back</button>
+</div>

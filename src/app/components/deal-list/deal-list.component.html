@@ -1,0 +1,25 @@
+<p>Deals List</p>
+<button (click)="openDealModal()">Add Deal</button>
+<app-deal-modal (addDeals)="addDeals($event)" *ngIf="modalOpen"></app-deal-modal>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Price ($)</th>
+      <th>Address</th>
+      <th>NOI ($)</th>
+      <th>Cap Rate (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr app-deal 
+        *ngFor="let deal of deals; let i = index"
+        [deal]="deal"
+        (update)="updateDeal($event)"
+        (view)="viewDeal(i)"
+        (remove)="removeDeal($event)"
+    >
+    </tr>
+  </tbody>
+</table>
