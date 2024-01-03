@@ -1,5 +1,5 @@
 export interface IDeal {
-  id:number;
+  id?:number;
   name: string;
   type: string;
   purchasePrice: number;

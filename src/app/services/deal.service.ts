@@ -48,6 +48,12 @@ export class DealService {
   }
 
   addDeals(deals: IDeal[]) { 
+    deals.forEach((deal, index) => {
+      deal.id = this.getNextId(index);
+    });
+
+    console.log(this.dealsList)
+
     this.dealsList.push(...deals);
   }
 
@@ -61,6 +67,11 @@ export class DealService {
   }
 
   getDealById(dealId: number): IDeal | undefined {
+    console.log(this.dealsList)
     return this.dealsList.find((deal) => deal.id === dealId)
+  }
+
+  private getNextId(index: number): number {
+    return this.dealsList.length + index;
   }
 }

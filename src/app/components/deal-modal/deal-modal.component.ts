@@ -1,6 +1,7 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { DealService } from "../../services/deal.service";
 import { IDeal } from "../../interfaces/ideal";
 
 @Component({
@@ -15,40 +16,25 @@ import { IDeal } from "../../interfaces/ideal";
 })
 
 export class DealModalComponent {
-  newDeals: IDeal[] = [{
-    id: 0,
+  newDeal: IDeal = {
     name: '',
     type: '',
     purchasePrice: 0,
     address: '',
     noi: 0,
     capRate: 0
-  }];
+  } 
+  newDeals: IDeal[] = [this.newDeal];
+
+  constructor(private dealService: DealService) {}
 
   addDeal() {
-    let index = this.newDeals.length
-    this.newDeals.push({ 
-      id: this.newDeals.length,
-      name: '',
-      type: '',
-      purchasePrice: 0,
-      address: '',
-      noi: 0,
-      capRate: 0
-    });
+    this.newDeals.push(this.newDeal);
   }
 
-  onSubmit() {
+  onSubmit() {  
     this.addDeals.emit(this.newDeals);
-    this.newDeals = [{
-      id: 0,
-      name: '',
-      type: '',
-      purchasePrice: 0,
-      address: '',
-      noi: 0,
-      capRate: 0
-    }];
+    this.newDeals = [this.newDeal];
   }
 
   @Output() addDeals: EventEmitter<IDeal[]> = new EventEmitter<IDeal[]>();
