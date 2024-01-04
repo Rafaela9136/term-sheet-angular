@@ -1,76 +1,40 @@
 <div class="modal">
   <p class="title">Add Deals</p>
-  
-  <div *ngFor="let deal of newDeals; let i = index" class="deal-container">
-    <label for="name{{i}}">
-      <b>Name: </b>
-      <input type="text" id="name{{i}}" name="name{{i}}" [(ngModel)]="deal.name" required>
-    </label>
-
-    <label for="type{{i}}">
-      <b>Type: </b>
-      <select id="type{{i}}" [(ngModel)]="deal.type" name="type{{i}}" required>
-        <option value="Acquisition">Acquisition</option>
-        <option value="Lease">Lease</option>
-        <option value="Development">Development</option>
-      </select>
-    </label>
-
-    <label for="purchasePrice{{i}}">
-      <b>Purchase Price: </b>
-      <input type="number" id="purchasePrice{{i}}" name="purchasePrice{{i}}" [(ngModel)]="deal.purchasePrice" required>
-    </label>
-    
-    <label for="address{{i}}">
-      <b>Address: </b>
-      <input type="text" id="address{{i}}" name="address{{i}}" [(ngModel)]="deal.address" required>
-    </label>
-    
-    <label for="noi{{i}}">
-      <b>NOI: </b>
-      <input type="number" id="noi{{i}}" name="noi{{i}}" [(ngModel)]="deal.noi" required>
-    </label>
-
-    <label for="capRate{{i}}" *ngIf="deal.noi && deal.purchasePrice">
-      <b>Cap Rate (NOI/Purchase Price): </b>
-      <input type="number" id="capRate{{i}}" name="capRate{{i}}" [(ngModel)]="deal.capRate" disabled value="{{deal.noi / deal.purchasePrice}}">
-    </label>
-  </div>
 
   <form (ngSubmit)="onSubmit()">
-    <div class="deal-container">
-      <label for="new-name">
-        <b>Name: </b>
-        <input type="text" id="new-name" name="new-name" [(ngModel)]="newDeal.name" required>
+    <div *ngFor="let deal of newDeals; let i = index" class="deal-container">
+      <label for="name{{i}}">
+        <b>Name:</b>
+        <input type="text" id="name{{i}}" name="name{{i}}" [(ngModel)]="deal.name" required>
       </label>
 
-      <label for="new-type">
-        <b>Type: </b>
-        <select id="new-type" [(ngModel)]="newDeal.type" name="new-type" required>
+      <label for="type{{i}}">
+        <b>Type:</b>
+        <select id="type{{i}}" [(ngModel)]="deal.type" name="type{{i}}" required>
           <option value="Acquisition">Acquisition</option>
           <option value="Lease">Lease</option>
           <option value="Development">Development</option>
         </select>
       </label>
 
-      <label for="newPurchasePrice">
-        <b>Purchase Price: </b>
-        <input type="number" id="newPurchasePrice" name="newPurchasePrice" [(ngModel)]="newDeal.purchasePrice" required>
+      <label for="purchasePrice{{i}}">
+        <b>Purchase Price:</b>
+        <input type="number" id="purchasePrice{{i}}" name="purchasePrice{{i}}" [(ngModel)]="deal.purchasePrice" (ngModelChange)="updateCapRate(deal)" required>
       </label>
       
-      <label for="newAddress">
-        <b>Address: </b>
-        <input type="text" id="newAddress" name="newAddress" [(ngModel)]="newDeal.address" required>
+      <label for="address{{i}}">
+        <b>Address:</b>
+        <input type="text" id="address{{i}}" name="address{{i}}" [(ngModel)]="deal.address" required>
       </label>
       
-      <label for="newNoi">
+      <label for="noi{{i}}">
         <b>NOI: </b>
-        <input type="number" id="newNoi" name="newNoi" [(ngModel)]="newDeal.noi" required>
+        <input type="number" id="noi{{i}}" name="noi{{i}}" [(ngModel)]="deal.noi" (ngModelChange)="updateCapRate(deal)" required>
       </label>
 
-      <label for="newCapRate" *ngIf="newDeal.noi && newDeal.purchasePrice">
+      <label for="capRate{{i}}" *ngIf="deal.noi && deal.purchasePrice">
         <b>Cap Rate (NOI/Purchase Price): </b>
-        <input type="number" id="newCapRate" name="newCapRate" [(ngModel)]="newDeal.capRate" disabled value="{{newDeal.noi / newDeal.purchasePrice}}">
+        <input type="number" id="capRate{{i}}" name="capRate{{i}}" [(ngModel)]="deal.capRate" disabled>
       </label>
     </div>
 

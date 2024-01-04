@@ -30,21 +30,24 @@ export class DealModalComponent {
   constructor(
     private dealService: DealService,
     private router: Router
-  ) {}
+  ) {
+    this.newDeals.push(JSON.parse(JSON.stringify(this.newDeal)));
+  }
 
   addDeal() {
     this.newDeals.push(JSON.parse(JSON.stringify(this.newDeal)));
-    this.newDeal = {
-      name: '',
-      type: '',
-      purchasePrice: 0,
-      address: '',
-      noi: 0,
-      capRate: 0
-    } 
+  }
+
+  updateCapRate(deal: IDeal) {
+    if (deal.noi !== undefined && deal.purchasePrice !== undefined && deal.purchasePrice !== 0) {
+      deal.capRate = deal.noi/deal.purchasePrice;
+    } else {
+      deal.capRate = 0;
+    }
   }
 
   onSubmit() {  
+    console.log(this.newDeals)
     this.dealService.addDeals(this.newDeals);
     this.newDeals = [this.newDeal];
     this.router.navigateByUrl('')

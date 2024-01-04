@@ -4,5 +4,12 @@
 }
 
 .return-btn {
-  float: right;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  float: left;
+  background-color: gray;
 }

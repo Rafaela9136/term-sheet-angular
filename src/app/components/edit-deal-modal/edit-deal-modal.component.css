@@ -18,12 +18,12 @@ label {
   font-weight: bold;
 
   &.edit-btn {
-    float: left;
+    float: right;
     background-color: #271b90;
   }
 
   &.return-btn {
-    float: right;
+    float: left;
     background-color: gray;
   }
 }

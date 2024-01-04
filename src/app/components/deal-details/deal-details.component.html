@@ -5,8 +5,8 @@
     <p><b>Purchase Price:</b> ${{ deal.purchasePrice }}</p>
     <p><b>Address:</b> ${{ deal.address }}</p>
     <p><b>NOI:</b> ${{ deal.noi }}</p>
-    <p><b>Cap Rate (NOI/Purchase Price):</b> {{ deal.capRate }}%</p>
+    <p><b>Cap Rate (NOI/Purchase Price):</b> {{ deal.capRate?.toFixed(2) }}%</p>
   </div>
 
-  <button class="return-btn" (click)="goBack()">Nice! Take me back to the list.</button>
+  <button class="return-btn" (click)="goBack()">Ok! Take me back to the list.</button>
 </div>

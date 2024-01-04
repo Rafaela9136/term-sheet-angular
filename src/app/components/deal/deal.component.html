@@ -3,7 +3,7 @@
 <td>{{ deal.address }}</td>
 <td>${{ deal.purchasePrice }}</td>
 <td>${{ deal.noi }}</td>
-<td>{{ deal.capRate }}%</td>
+<td>{{ deal.capRate?.toFixed(2) }}%</td>
 <td>
   <button class="btn view-btn" (click)="viewDeal()" title="View Deal">
   </button>

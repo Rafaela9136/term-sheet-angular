@@ -6,6 +6,7 @@
 .deal-container {
   padding: 10px;
   border: 1px solid #271b90;
+  display: flow-root;
   margin: 10px 0;
 
   label {
@@ -24,13 +25,13 @@
   font-weight: bold;
 
   &.add-btn {
-    float: left;
+    float: right;
     margin-right: 10px;
     background-color: #271b90;
   }
 
   &.return-btn {
-    float: right;
+    float: left;
     background-color: gray;
   }
 }

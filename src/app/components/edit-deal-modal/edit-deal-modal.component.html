@@ -32,7 +32,7 @@
 
     <label *ngIf="deal.noi && deal.purchasePrice">
       <b>Cap Rate (NOI/Purchase Price): </b>
-      <input type="number" id="editCapRate" name="editCapRate" [(ngModel)]="deal.capRate" disabled value="{{deal.noi / deal.purchasePrice}}">
+      <input type="number" id="editCapRate" name="editCapRate" [(ngModel)]="deal.capRate" disabled>
     </label>
 
     <button class="btn edit-btn" type="submit">Edit Deal</button>
