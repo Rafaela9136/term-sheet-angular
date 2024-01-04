@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, ActivatedRoute } from "@angular/router";
 import { DealService } from "../../services/deal.service";
@@ -9,8 +8,7 @@ import { IDeal } from "../../interfaces/ideal";
   selector: 'app-edit-deal-modal',
   standalone: true,
   imports: [
-    FormsModule,
-    CommonModule
+    FormsModule
   ],
   templateUrl: './edit-deal-modal.component.html',
   styleUrl: './edit-deal-modal.component.css'
@@ -35,6 +33,7 @@ export class EditDealModalComponent implements OnInit {
 
   loadDealDetails() {
     this.deal = this.dealService.getDealById(this.dealId);
+    console.log(this.deal)
   }
 
   onSubmit() {  
