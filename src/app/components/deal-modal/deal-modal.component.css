@@ -1,0 +1,36 @@
+.title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.deal-container {
+  padding: 10px;
+  border: 1px solid #271b90;
+  margin: 10px 0;
+
+  label {
+    width: 100%;
+    margin: 5px 0;
+    display: grid;
+  }
+}
+
+.btn {
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+
+  &.add-btn {
+    float: left;
+    margin-right: 10px;
+    background-color: #271b90;
+  }
+
+  &.return-btn {
+    float: right;
+    background-color: gray;
+  }
+}

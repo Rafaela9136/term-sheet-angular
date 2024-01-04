@@ -21,6 +21,7 @@ const defaultDealsList = [
     capRate: 5.5,
   },
   {
+    id: 2,
     name: 'Green Acres Warehouse',
     type: 'Lease',
     purchasePrice: 950000,
@@ -29,6 +30,7 @@ const defaultDealsList = [
     capRate: 7.2,
   },
   {
+    id: 3,
     name: 'Oceanfront Resort',
     type: 'Acquisition',
     purchasePrice: 2000000,
@@ -37,6 +39,7 @@ const defaultDealsList = [
     capRate: 8.5,
   },
   {
+    id: 4,
     name: 'Downtown Loft Condos',
     type: 'Development',
     purchasePrice: 500000,

@@ -25,7 +25,7 @@ export class DealModalComponent {
     noi: 0,
     capRate: 0
   } 
-  newDeals: IDeal[] = [this.newDeal];
+  newDeals: IDeal[] = [];
 
   constructor(
     private dealService: DealService,
@@ -33,12 +33,24 @@ export class DealModalComponent {
   ) {}
 
   addDeal() {
-    this.newDeals.push(this.newDeal);
+    this.newDeals.push(JSON.parse(JSON.stringify(this.newDeal)));
+    this.newDeal = {
+      name: '',
+      type: '',
+      purchasePrice: 0,
+      address: '',
+      noi: 0,
+      capRate: 0
+    } 
   }
 
   onSubmit() {  
     this.dealService.addDeals(this.newDeals);
     this.newDeals = [this.newDeal];
     this.router.navigateByUrl('')
+  }
+
+  goBack() {
+    this.router.navigate(['/']);
   }
 }

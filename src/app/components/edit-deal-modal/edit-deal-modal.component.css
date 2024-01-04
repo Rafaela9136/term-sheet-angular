@@ -1,0 +1,29 @@
+.title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+label {
+  width: 100%;
+  margin: 5px 0;
+  display: grid;
+}
+
+.btn {
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+
+  &.edit-btn {
+    float: left;
+    background-color: #271b90;
+  }
+
+  &.return-btn {
+    float: right;
+    background-color: gray;
+  }
+}

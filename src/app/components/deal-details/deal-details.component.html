@@ -1,10 +1,12 @@
 <div *ngIf="deal">
-  <h2>{{ deal.name }} Details</h2>
-  <p>Type: {{ deal.type }}</p>
-  <p>Purchase Price: ${{ deal.purchasePrice }}</p>
-  <p>Address: ${{ deal.address }}</p>
-  <p>NOI: ${{ deal.noi }}</p>
-  <p>capRate: {{ deal.capRate }}%</p>
+  <p class="title">{{ deal.name }} Details</p>
+  <div>
+    <p><b>Type:</b> {{ deal.type }}</p>
+    <p><b>Purchase Price:</b> ${{ deal.purchasePrice }}</p>
+    <p><b>Address:</b> ${{ deal.address }}</p>
+    <p><b>NOI:</b> ${{ deal.noi }}</p>
+    <p><b>Cap Rate (NOI/Purchase Price):</b> {{ deal.capRate }}%</p>
+  </div>
 
-  <button (click)="goBack()">Go Back</button>
+  <button class="return-btn" (click)="goBack()">Nice! Take me back to the list.</button>
 </div>
