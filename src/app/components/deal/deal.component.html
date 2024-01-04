@@ -1,15 +1,14 @@
 <td>{{ deal.name }}</td>
 <td>{{ deal.type }}</td>
-<td>{{ deal.purchasePrice }}</td>
 <td>{{ deal.address }}</td>
-<td>{{ deal.noi }}</td>
-<td>{{ deal.capRate }}</td>
-<button class="btn btn-red" (click)="viewDeal()">
-  view
-</button>
-<button class="btn btn-red" (click)="updateDeal()">
-  edit
-</button>
-<button class="btn btn-red" (click)="removeDeal()">
-  remove
-</button>
+<td>${{ deal.purchasePrice }}</td>
+<td>${{ deal.noi }}</td>
+<td>{{ deal.capRate }}%</td>
+<td>
+  <button class="btn view-btn" (click)="viewDeal()" title="View Deal">
+  </button>
+  <button class="btn edit-btn" (click)="updateDeal()" title="Edit Deal">
+  </button>
+  <button class="btn remove-btn" (click)="removeDeal()" title="Remove Deal">
+  </button>
+</td>

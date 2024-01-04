@@ -1,14 +1,18 @@
-<p>Deals List</p>
-<button (click)="addDeals()" class="btn">Add Deal</button>
+<p class="title">Deals List</p>
+<button (click)="addDeals()" class="add-deals-btn">
+  <span></span>
+  <p>Add Deals</p>
+</button>
 <table>
   <thead>
     <tr>
       <th>Name</th>
       <th>Type</th>
-      <th>Price ($)</th>
       <th>Address</th>
-      <th>NOI ($)</th>
-      <th>Cap Rate (%)</th>
+      <th>Price</th>
+      <th>NOI</th>
+      <th>Cap Rate (NOI/Purchase Price)</th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>

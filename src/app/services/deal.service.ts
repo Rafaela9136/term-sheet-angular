@@ -4,30 +4,45 @@ import { IDeal } from "../interfaces/ideal";
 const defaultDealsList = [
   {
     id: 0,
-    name: "Deal 1",
+    name: "Sunset Plaza Apartments",
     type: "Acquisition",
-    purchasePrice: 350,
-    address: "rua",
-    noi: 12122,
-    capRate: 12122
+    purchasePrice: 750000,
+    address: "123 Sunset Blvd",
+    noi: 50000,
+    capRate: 6.67
   },
   {
     id: 1,
-    name: "Deal 1",
-    type: "Acquisition",
-    purchasePrice: 350,
-    address: "rua",
-    noi: 12122,
-    capRate: 12122
+    name: 'Tech Park Tower',
+    type: 'Lease',
+    purchasePrice: 1200000,
+    address: '456 Tech Park Ave',
+    noi: 90000,
+    capRate: 5.5,
   },
   {
-    id: 2,
-    name: "Deal 1",
-    type: "Acquisition",
-    purchasePrice: 350,
-    address: "rua",
-    noi: 12122,
-    capRate: 12122
+    name: 'Green Acres Warehouse',
+    type: 'Lease',
+    purchasePrice: 950000,
+    address: '789 Green Acres Rd',
+    noi: 60000,
+    capRate: 7.2,
+  },
+  {
+    name: 'Oceanfront Resort',
+    type: 'Acquisition',
+    purchasePrice: 2000000,
+    address: '321 Oceanfront Dr',
+    noi: 150000,
+    capRate: 8.5,
+  },
+  {
+    name: 'Downtown Loft Condos',
+    type: 'Development',
+    purchasePrice: 500000,
+    address: '567 Main St',
+    noi: 35000,
+    capRate: 7.1,
   }
 ];
 

@@ -1,0 +1,41 @@
+td {
+  padding: 5px 0;
+  border: 1px solid lightgray;
+}
+
+.btn {
+  margin: 0 10px;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+
+  &.view-btn {
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    background-image: url("/assets/images/view-icon.svg");
+    background-repeat: no-repeat;
+    background-position: 0 2px;
+    background-size: 100%;
+  }
+
+  &.edit-btn {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-image: url("/assets/images/edit-icon.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+  }
+
+  &.remove-btn {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-image: url("/assets/images/remove-icon.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+  }
+}

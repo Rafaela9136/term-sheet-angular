@@ -1,0 +1,45 @@
+.title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.add-deals-btn {
+  float: right;
+  border: none;
+  margin-bottom: 10px;
+  background-color: white;
+  font-weight: bold;
+  color: #271b90;
+  cursor: pointer;
+  display: inline-flex;
+
+  span {
+    width: 25px;
+    height: 40px;
+    display: inline-block;
+    background-image: url("/assets/images/add-icon.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+  }
+}
+
+table {
+  width: 100%;
+  font-size: 13px;
+  text-align: center; 
+  vertical-align: middle;
+  border-collapse: collapse;
+  border: 1px solid lightgray;
+
+  thead {
+    background-color: #271b90;
+    color: white;
+    font-weight: 400;
+    padding: 5px;
+
+    th {
+      width: 10%;
+    }
+  }
+}
