@@ -52,13 +52,20 @@ export class DealService {
       deal.id = this.getNextId(index);
     });
 
-    console.log(this.dealsList)
-
     this.dealsList.push(...deals);
+  }
+
+  addNewDeal(deal: IDeal) {
+    this.dealsList.push({ ...deal, id: this.dealsList.length + 1 });
   }
 
   updateDeal(deal: IDeal): void {
     const index = this.dealsList.indexOf(deal);
+    console.log(index)
+ 
+    if (index !== -1) {
+      this.dealsList[index] = { ...deal };
+    }
   }
 
   removeDeal(deal: IDeal) { 
@@ -66,9 +73,9 @@ export class DealService {
     this.dealsList.splice(index, 1);
   }
 
-  getDealById(dealId: number): IDeal | undefined {
+  getDealById(dealId: number): IDeal {
     console.log(this.dealsList)
-    return this.dealsList.find((deal) => deal.id === dealId)
+    return this.dealsList.find((deal) => deal.id === dealId) || {}
   }
 
   private getNextId(index: number): number {

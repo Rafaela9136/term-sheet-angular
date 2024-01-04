@@ -1,6 +1,5 @@
 <p>Deals List</p>
-<button (click)="openDealModal()">Add Deal</button>
-<app-deal-modal (addDeals)="addDeals($event)" *ngIf="modalOpen"></app-deal-modal>
+<button (click)="addDeals()" class="btn">Add Deal</button>
 <table>
   <thead>
     <tr>
@@ -16,7 +15,7 @@
     <tr app-deal 
         *ngFor="let deal of deals; let i = index"
         [deal]="deal"
-        (update)="updateDeal($event)"
+        (update)="editDeal(i)"
         (view)="viewDeal(i)"
         (remove)="removeDeal($event)"
     >

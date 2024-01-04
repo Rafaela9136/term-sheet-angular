@@ -40,7 +40,7 @@ export class DealComponent implements OnInit {
     this.view.emit(this.deal)
   }
   
-  @Output() remove: EventEmitter<IDeal> = new EventEmitter<IDeal>();
-  @Output() update: EventEmitter<IDeal> = new EventEmitter<IDeal>();
-  @Output() view: EventEmitter<IDeal> = new EventEmitter<IDeal>();
+  @Output() remove = new EventEmitter<IDeal>();
+  @Output() update = new EventEmitter<IDeal>();
+  @Output() view = new EventEmitter<IDeal>();
 }

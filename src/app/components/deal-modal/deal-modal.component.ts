@@ -1,6 +1,7 @@
-import { Component, Output, EventEmitter } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from "@angular/router";
+import { CommonModule } from '@angular/common';
 import { DealService } from "../../services/deal.service";
 import { IDeal } from "../../interfaces/ideal";
 
@@ -8,8 +9,8 @@ import { IDeal } from "../../interfaces/ideal";
   selector: 'app-deal-modal',
   standalone: true,
   imports: [
-    CommonModule,
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   templateUrl: './deal-modal.component.html',
   styleUrl: './deal-modal.component.css'
@@ -26,16 +27,18 @@ export class DealModalComponent {
   } 
   newDeals: IDeal[] = [this.newDeal];
 
-  constructor(private dealService: DealService) {}
+  constructor(
+    private dealService: DealService,
+    private router: Router
+  ) {}
 
   addDeal() {
     this.newDeals.push(this.newDeal);
   }
 
   onSubmit() {  
-    this.addDeals.emit(this.newDeals);
+    this.dealService.addDeals(this.newDeals);
     this.newDeals = [this.newDeal];
+    this.router.navigateByUrl('')
   }
-
-  @Output() addDeals: EventEmitter<IDeal[]> = new EventEmitter<IDeal[]>();
 }

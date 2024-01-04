@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet, Router } from '@angular/router';
 import { DealComponent } from '../deal/deal.component';
 import { DealModalComponent } from '../deal-modal/deal-modal.component';
+import { EditDealModalComponent } from '../edit-deal-modal/edit-deal-modal.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { DealService } from "../../services/deal.service";
 import { IDeal } from "../../interfaces/ideal";
@@ -15,28 +16,28 @@ import { IDeal } from "../../interfaces/ideal";
     RouterOutlet,
     NavbarComponent,
     DealComponent,
-    DealModalComponent
+    DealModalComponent,
+    EditDealModalComponent
   ],
   templateUrl: './deal-list.component.html',
   styleUrl: './deal-list.component.css'
 })
 
 export class DealListComponent {
-  modalOpen = false;
+  editedDeal: IDeal | undefined;
 
-  constructor(private DealService: DealService, private router: Router) {}
+  constructor(
+    private dealService: DealService,
+    private router: Router
+  ) {}
 
   get deals() {
-    return this.DealService.getDeals();
+    return this.dealService.getDeals();
   }
 
-  openDealModal() {
-    this.modalOpen = true;
-  }
-
-  addDeals(newDeals: IDeal[]) {
-    this.DealService.addDeals(newDeals);
-    this.modalOpen = false;
+  addDeals() {
+    console.log("add deals")
+    this.router.navigate(['/add-deals']);
   }
 
   viewDeal(dealId: number) {
@@ -44,11 +45,21 @@ export class DealListComponent {
     this.router.navigate(['/deal-details', dealId]);
   }
 
+  editDeal(dealId: number) {
+    console.log("edit deals")
+    this.router.navigate(['/edit-deal', dealId]);
+  }
+
+  selectDeal(deal: IDeal) {
+    console.log(deal)
+    this.editedDeal = { ...deal};
+  }
+
   updateDeal(deal: IDeal) {
-    this.DealService.updateDeal(deal);
+    this.dealService.updateDeal(deal);
   }
 
   removeDeal(deal: IDeal) {
-    this.DealService.removeDeal(deal);
+    this.dealService.removeDeal(deal);
   }
 }
